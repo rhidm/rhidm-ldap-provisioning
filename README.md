@@ -62,7 +62,7 @@ Create the executable script */usr/local/sbin/ipa-activate-all*:
 
 kinit -k -i activator
 
-ipa stageuser-find --all --raw | grep "  uid:" | cut -d " " -f 4 | while read uid; do ipa stageuser-activate ${uid}; done
+ipa stageuser-find --all --raw | grep "  uid:" | cut -d ":" -f 2 | while read uid; do ipa stageuser-activate ${uid}; done
 
 ```
 
